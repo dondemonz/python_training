@@ -9,7 +9,7 @@ from group import Group
 
 class TestAddGroup(unittest.TestCase):
     def setUp(self):
-        self.wd = webdriver.Firefox()
+        self.wd = webdriver.Chrome()
         self.wd.implicitly_wait(30)
 
     
