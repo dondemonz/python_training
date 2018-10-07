@@ -15,4 +15,3 @@ def test_contact_modification(app):
                        email3="9_z", homepage="9_z", bday="30", bmonth="December", byear="9_z", aday="1", amonth="April",
                        ayear="0__2", address2="9_z", phone2="9_z", notes="9_z"))
 
-    
