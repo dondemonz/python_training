@@ -202,8 +202,6 @@ class ContactHelper:
         contacts = []
         for element in wd.find_elements_by_name("entry"):
             cell = element.find_elements_by_tag_name("td")
-            # firstname = cell[1]
-            # text = element.text
             id = element.find_element_by_name("selected[]").get_attribute("value")
             contacts.append(Contact(firstname=cell[1].text, id=id))
         return contacts
