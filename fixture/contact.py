@@ -5,6 +5,10 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
+    def open_home_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+
     def create(self, contact):
         wd = self.app.wd
         # fill contact form
@@ -186,6 +190,7 @@ class ContactHelper:
         wd.find_element_by_name("notes").send_keys(contact.notes)
         #submit changes
         wd.find_element_by_name("update").click()
+        wd.find_element_by_link_text("home page").click()
 
     def count(self):
         wd = self.app.wd
@@ -193,10 +198,12 @@ class ContactHelper:
 
     def get_contacts_list(self):
         wd = self.app.wd
-        # self.open_home_page()
+        self.open_home_page()
         contacts = []
         for element in wd.find_elements_by_name("entry"):
-            text = element.text
+            cell = element.find_elements_by_tag_name("td")
+            # firstname = cell[1]
+            # text = element.text
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(firstname=text, lastname=text, id=id))
+            contacts.append(Contact(firstname=cell[1].text, id=id))
         return contacts
