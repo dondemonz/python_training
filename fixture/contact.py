@@ -15,6 +15,7 @@ class ContactHelper:
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
+
         """
         wd.find_element_by_name("middlename").click()
         wd.find_element_by_name("middlename").clear()
@@ -88,6 +89,7 @@ class ContactHelper:
         """
         # submit contact operation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        wd.find_element_by_link_text("home page").click()
 
     def return_to_home_page(self):
         wd = self.app.wd
@@ -194,10 +196,7 @@ class ContactHelper:
         # self.open_home_page()
         contacts = []
         for element in wd.find_elements_by_name("entry"):
-            cell = element.find_elements_by_tag_name("td")
-            # lastname = cell[1]
-            # firstname = cell[2]
-            # text = element.text
+            text = element.text
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(lastname=cell[1].text, firstname=cell[2].text, id=id))
+            contacts.append(Contact(firstname=text, lastname=text, id=id))
         return contacts
