@@ -126,20 +126,19 @@ class ContactHelper:
 
     def modify_contact_by_index(self, index, contact):
         wd = self.app.wd
-        # select first contact
-        self.select_contact_by_index(index)
         # edit contact
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
-        #submit changes
+        # submit changes
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home page").click()
         self.contact_cache = None
+
 
     def count(self):
         wd = self.app.wd
