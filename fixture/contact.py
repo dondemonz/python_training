@@ -169,12 +169,15 @@ class ContactHelper:
             self.contact_cache = []
             for row in wd.find_elements_by_name("entry"):
                 cell = row.find_elements_by_tag_name("td")
-                firstname = cell[1].text
-                lastname = cell[2].text
-                id = cell[0].find_element_by_tag_name("input").get_attribute("value")
+                firstname = cell[2].text
+                lastname = cell[1].text
+                address = cell[3].text
                 all_phones = cell[5].text
-                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id,
-                                                  all_phones_from_home_page=all_phones))
+                all_emails = cell[4].text
+                id = cell[0].find_element_by_tag_name("input").get_attribute("value")
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id, address=address,
+                                                  all_phones_from_home_page=all_phones, all_emails=all_emails))
+
         return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
@@ -187,8 +190,13 @@ class ContactHelper:
         workphone = wd.find_element_by_name("work").get_attribute("value")
         mobilephone = wd.find_element_by_name("mobile").get_attribute("value")
         secondaryphone = wd.find_element_by_name("phone2").get_attribute("value")
+        address = wd.find_element_by_name('address').get_attribute('value')
+        email = wd.find_element_by_name('email').get_attribute('value')
+        email2 = wd.find_element_by_name('email2').get_attribute('value')
+        email3 = wd.find_element_by_name('email3').get_attribute('value')
         return Contact(firstname=firstname, lastname=lastname, id=id, homephone=homephone, workphone=workphone,
-                       mobilephone=mobilephone, secondaryphone=secondaryphone)
+                       mobilephone=mobilephone, secondaryphone=secondaryphone,  address=address,
+                       email=email, email2=email2, email3=email3)
 
 
     def get_contacts_from_view_page(self, index):
@@ -201,6 +209,10 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return Contact(homephone=homephone, workphone=workphone,
                        mobilephone=mobilephone, secondaryphone=secondaryphone)
+
+
+        return list(self.address_cache)
+
 
     """
     id = element.find_element_by_name("selected[]").get_attribute("value")
