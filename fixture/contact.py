@@ -211,7 +211,7 @@ class ContactHelper:
                        mobilephone=mobilephone, secondaryphone=secondaryphone)
 
 
-        return list(self.address_cache)
+
 
 
     """

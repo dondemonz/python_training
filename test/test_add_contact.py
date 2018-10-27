@@ -1,23 +1,12 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
-import pytest
-import random
-import string
-
-def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + " "
-    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
-
-
-testdata = [Contact(firstname="", lastname="", middlename="")] + [
-    Contact(firstname=random_string("firstname", 5), lastname=random_string("lastname", 10), middlename=random_string("middlename", 15))
-    for i in range(5)
-]
 
 
 
-@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
-def test_add_contact(app, contact):
+
+
+def test_add_contact(app, data_contacts):
+    contact = data_contacts
     old_contacts = app.contact.get_contacts_list()
     app.contact.create(contact)
     new_contacts = app.contact.get_contacts_list()
@@ -27,6 +16,16 @@ def test_add_contact(app, contact):
 
 
 """
+
+
+import pytest
+from data.contacts import constant as testdata
+
+аннотация теста
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
+
+
+
 contact = Contact(firstname="123qwe", middlename="123qwe", lastname="123qwe", nickname="123qwe",
                        title="123qwe", image_path="C:\\1\\ArcheAge_sample.jpg", company="123qwe", address="123qwe", home="123qwe",
                        mobile="123qwe", work="123qwe", fax="123qwe", email="123qwe", email2="123qwe",
