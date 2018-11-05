@@ -11,9 +11,9 @@ def test_group_list(app, db):
 
 def test_contact_list(app, db):
     ui_list = app.contact.get_contacts_list()
-    # def clean(contact):
-    #    return Contact(id=contact.id, firstname=contact.firstname.strip())
-    db_list = db.get_contacts_list()
+    def clean(contact):
+       return Contact(id=contact.id, firstname=contact.firstname.strip())
+    db_list = map(clean(db.get_contacts_list()))
     # db_list2 = filter(lambda x: x is not None, db_list)
     print(sorted(ui_list, key=Contact.id_or_max))
     print(sorted(db_list, key=Contact.id_or_max))
