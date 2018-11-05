@@ -241,6 +241,44 @@ class ContactHelper:
 
 
 
+    def add_contact_to_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.click_contact_by_id(contact_id)
+        self.choose_group(group_id)
+        # нажимаем кнопку
+        button = wd.find_element_by_xpath("//*[@type='submit']")
+        button.click()
+        pass
+
+    def choose_group(self, group_id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//*[@name='to_group']/*[@value = "+group_id+"]").click()
+
+
+    def return_id_contacts(self, l):
+        id_contacts = []
+        for row in l:
+            id_contacts.append(row.id)
+        return id_contacts
+
+    def click_contact_by_id(self, id):
+        wd = self.app.wd
+        check = wd.find_element_by_xpath("//*[@id=" + id + "]")
+        check.click()
+        pass
+
+
+    def delete_contact_from_group(self, id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//*[@id='right']/select/option[@value = "+id+"]").click()
+        contact_list = self.get_contacts_list()
+        self.delete_first_contact_from_group(contact_list[0].id)
+        return contact_list[0].id
+
+    def delete_first_contact_from_group(self, id):
+        wd = self.app.wd
+        self.click_contact_by_id(id)
+        wd.find_element_by_xpath("//*[@name='remove']").click()
 
 
     """
