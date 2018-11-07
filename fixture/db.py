@@ -13,7 +13,10 @@ class DbFixture:
         self.connection = pymysql.connect(host=host, database=name, user=user, password=password)
         self.connection.autocommit = True
 
+
+
     def get_group_list(self):
+
         list = []
         cursor = self.connection.cursor()
         try:
@@ -23,20 +26,24 @@ class DbFixture:
                 list.append(Group(id=str(id), name=name, header=header, footer=footer))
         finally:
             cursor.close()
-            return list
+        return list
+
+
 
     def get_contacts_list(self):
         list = []
         cursor = self.connection.cursor()
         try:
-            cursor.execute("select id, firstname, lastname from addressbook "
-                           "where deprecated = '0000-00-00 00:00:00'")
+            cursor.execute("select id, firstname, lastname, address, email, email2, "
+                           "email3, home, work, mobile, phone2 from addressbook where deprecated='0000-00-00 00:00:00'")
             for row in cursor:
-                (id, firstname, lastname) = row
-                list.append(Contact(id=id, firstname=firstname, lastname=lastname))
+                (id, firstname, lastname, address, email, email2, email3, home, work, mobile, phone2) = row
+                list.append(Contact(id=str(id), firstname=firstname, lastname=lastname,
+                                    address=address, email=email, email2=email2, email3=email3,
+                                    homephone=home, workphone=work, mobilephone=mobile, secondaryphone=phone2))
         finally:
             cursor.close()
-            return list
+        return list
 
     def destroy(self):
         self.connection.close()

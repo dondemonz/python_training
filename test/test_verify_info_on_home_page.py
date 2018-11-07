@@ -1,15 +1,26 @@
 import re
+from random import randrange
+from model.contact import Contact
+
 
 def test_phones_on_home_page(app):
-    contact_from_home_page = app.contact.get_contacts_list()[0]
-    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
+    old_contacts = app.contact.get_contacts_list()
+    if app.contact.count() == 0:
+        app.contact.create(Contact(firstname="123qwe"))
+    index = randrange(len(old_contacts))
+    contact_from_home_page = app.contact.get_contacts_list()[index]
+    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_edit_page)
 
 
 
 def test_phones_on_contact_view_page(app):
-    contact_from_view_page = app.contact.get_contacts_from_view_page(0)
-    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
+    old_contacts = app.contact.get_contacts_list()
+    if app.contact.count() == 0:
+        app.contact.create(Contact(firstname="123qwe"))
+    index = randrange(len(old_contacts))
+    contact_from_view_page = app.contact.get_contacts_from_view_page(index)
+    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
     assert contact_from_view_page.homephone == contact_from_edit_page.homephone
     assert contact_from_view_page.workphone == contact_from_edit_page.workphone
     assert contact_from_view_page.mobilephone == contact_from_edit_page.mobilephone
@@ -17,18 +28,20 @@ def test_phones_on_contact_view_page(app):
 
 
 def test_all_values_on_home_page(app):
-    contact_from_home_page = app.contact.get_contacts_list()[0]
-    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
-    # телефоны
+    old_contacts = app.contact.get_contacts_list()
+    if app.contact.count() == 0:
+        app.contact.create(Contact(firstname="123qwe"))
+    index = randrange(len(old_contacts))
+    contact_from_home_page = app.contact.get_contacts_list()[index]
+    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_edit_page)
-    # имя
     assert contact_from_home_page.firstname == contact_from_edit_page.firstname
-    # фамилия
     assert contact_from_home_page.lastname == contact_from_edit_page.lastname
-    # адрес
     assert contact_from_home_page.address == contact_from_edit_page.address
-    # email
     assert contact_from_home_page.all_emails == merge_email_like_on_home_page(contact_from_edit_page)
+
+
+
 
 
 def clear(s):

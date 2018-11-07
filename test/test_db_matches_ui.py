@@ -12,6 +12,7 @@ def test_group_list(app, db):
     assert sorted(ui_list, key=Group.id_or_max) == sorted(db_list, key=Group.id_or_max)
 
 def test_contacts_list(app, db_orm):
+    # app.contact.contact_cache = None
     ui_list = app.contact.get_contacts_list()
     db_list = db_orm.get_contacts_list()
     # print(sorted(ui_list, key=Contact.id_or_max))
