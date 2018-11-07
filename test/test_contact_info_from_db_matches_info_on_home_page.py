@@ -10,6 +10,9 @@ def test_contact_info_from_db_matches_info_on_home_page(app, db):
                        secondaryphone=contact.secondaryphone)
     ui_list = sorted(app.contact.get_contacts_list(), key=Contact.id_or_max)
     db_list = sorted(map(clean, db.get_contacts_list()), key=Contact.id_or_max)
+    # print(ui_list)
+    # print(db_list)
+    assert ui_list == db_list
     ui_phones_emails = []
     db_phones_emails = []
     for contact_db in db_list:
@@ -19,9 +22,8 @@ def test_contact_info_from_db_matches_info_on_home_page(app, db):
     for contact_ui in ui_list:
         db_phones_emails.append(contact_ui.all_phones_from_home_page and contact_ui.all_emails)
     assert sorted(ui_phones_emails) == sorted(db_phones_emails)
-    # print(ui_list)
-    # print(db_list)
-    assert ui_list == db_list
+
+
 
 
 def clear(s):
