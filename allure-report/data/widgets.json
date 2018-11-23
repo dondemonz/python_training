@@ -1,0 +1,84 @@
+{
+  "hash" : "e7105c43ada45c9f6e0006854ef1a1d95249231d",
+  "plugins" : {
+    "total" : {
+      "statistic" : {
+        "total" : 6,
+        "passed" : 0,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 6,
+        "broken" : 0
+      },
+      "time" : {
+        "start" : 1543006802175,
+        "stop" : 1543006822528,
+        "duration" : 20353
+      }
+    },
+    "defects" : {
+      "totalCount" : 6,
+      "items" : [ {
+        "count" : 1,
+        "uid" : "904759950b96f783",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:::\n  Use -v to get the full diff",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "d472455eb99d6486",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:name Z9:headeru:footeriiF VWjpYm\n  Use -v to get the full diff",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "577e29b08739774",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL\n  Use -v to get the full diff",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "abb83b1223e2f8cd",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F\n  Use -v to get the full diff",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "d7bc58ae2dd54c40",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk \n  Use -v to get the full diff",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "bd834241bb958ca1",
+        "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:nameJ6 WYh:header Ww :footerej7\n  Use -v to get the full diff",
+        "status" : "FAILED"
+      } ]
+    },
+    "xunit" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "uid" : "ba20d5f6b6dc2ce7",
+        "title" : "Test",
+        "statistic" : {
+          "total" : 6,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 6,
+          "broken" : 0
+        }
+      } ]
+    },
+    "behaviors" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "title" : "Without feature",
+        "statistic" : {
+          "total" : 6,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 6,
+          "broken" : 0
+        }
+      } ]
+    },
+    "environment" : [ ]
+  }
+}

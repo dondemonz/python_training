@@ -1,0 +1,343 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1543006802175" stop="1543006822528">
+  <name>test</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1543006802175" status="failed" stop="1543006807996">
+      <name>test_add_group.test_add_group[None:::]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:::
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;, json_groups = None:::
+check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:::
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006805014" status="passed" stop="1543006805017">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006805017" status="passed" stop="1543006805939">
+          <name>When I add the group None::: to the list</name>
+          <title>When I add the group None::: to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006807940" status="failed" stop="1543006807945">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543006807997" status="failed" stop="1543006810958">
+      <name>test_add_group.test_add_group[None:name Z9:headeru:footeriiF VWjpYm]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:name Z9:headeru:footeriiF VWjpYm
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;
+json_groups = None:name Z9:headeru:footeriiF VWjpYm, check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:name Z9:headeru:footeriiF VWjpYm
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006808068" status="passed" stop="1543006808071">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006808071" status="passed" stop="1543006808943">
+          <name>When I add the group None:name Z9:headeru:footeriiF VWjpYm to the list</name>
+          <title>When I add the group None:name Z9:headeru:footeriiF VWjpYm to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006810943" status="failed" stop="1543006810948">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543006810960" status="failed" stop="1543006813889">
+      <name>test_add_group.test_add_group[None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;
+json_groups = None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL
+check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006811028" status="passed" stop="1543006811030">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006811030" status="passed" stop="1543006811881">
+          <name>When I add the group None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL to the list</name>
+          <title>When I add the group None:name hKf 4Kcf:headerRcC TIsPCm:footer vFcw dAHgLhALTcL to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006813882" status="failed" stop="1543006813884">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543006813890" status="failed" stop="1543006816770">
+      <name>test_add_group.test_add_group[None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;
+json_groups = None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F, check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006813941" status="passed" stop="1543006813943">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006813943" status="passed" stop="1543006814762">
+          <name>When I add the group None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F to the list</name>
+          <title>When I add the group None:nameiB mB :headerGS k1Re6 8Cvk:footerEX F to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006816763" status="failed" stop="1543006816765">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543006816771" status="failed" stop="1543006819652">
+      <name>test_add_group.test_add_group[None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk ]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk 
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;
+json_groups = None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk , check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk 
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006816821" status="passed" stop="1543006816823">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006816823" status="passed" stop="1543006817638">
+          <name>When I add the group None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk  to the list</name>
+          <title>When I add the group None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk  to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006819638" status="failed" stop="1543006819643">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543006819654" status="failed" stop="1543006822528">
+      <name>test_add_group.test_add_group[None:nameJ6 WYh:header Ww :footerej7]</name>
+      <failure>
+        <message>AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+  Left contains more items, first extra item: None:nameJ6 WYh:header Ww :footerej7
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x043E3410&gt;
+db = &lt;fixture.db.DbFixture object at 0x03436AD0&gt;
+json_groups = None:nameJ6 WYh:header Ww :footerej7, check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+        group = json_groups
+        with pytest.allure.step("Given a group list"):
+            old_groups = db.get_group_list()
+        with pytest.allure.step("When I add the group %s to the list" % group):
+            app.group.create(group)
+        time.sleep(2)
+        with pytest.allure.step("the new group list is equal to the old list with added group"):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]
+E             Left contains more items, first extra item: None:nameJ6 WYh:header Ww :footerej7
+E             Use -v to get the full diff
+
+test\test_add_group.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15208-MainThread"/>
+        <label name="host" value="dondemon"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543006819726" status="passed" stop="1543006819728">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006819728" status="passed" stop="1543006820513">
+          <name>When I add the group None:nameJ6 WYh:header Ww :footerej7 to the list</name>
+          <title>When I add the group None:nameJ6 WYh:header Ww :footerej7 to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1543006822514" status="failed" stop="1543006822519">
+          <name>the new group list is equal to the old list with added group</name>
+          <title>the new group list is equal to the old list with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

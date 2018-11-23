@@ -1,0 +1,53 @@
+{
+  "uid" : "da9adee23a600500",
+  "name" : "test_add_group.test_add_group[None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk ]",
+  "title" : "Test add group [None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk ]",
+  "time" : {
+    "start" : 1543005314443,
+    "stop" : 1543005317271,
+    "duration" : 2828
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : {
+    "message" : "AssertionError: assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\n  Left contains more items, first extra item: None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk \n  Use -v to get the full diff",
+    "stackTrace" : "app = <fixture.application.Application object at 0x038540F0>\ndb = <fixture.db.DbFixture object at 0x03824EF0>\njson_groups = None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk , check_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n        old_groups = db.get_group_list()\n        app.group.create(group)\n        time.sleep(2)\n        new_groups = db.get_group_list()\n        old_groups.append(group)\n>       assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)\nE       assert [95:name Z9:h...gLhALTcL, ...] == [95:name Z9:he...gLhALTcL, ...]\nE         Left contains more items, first extra item: None:namem:header8oyrL6L2t:footer6 Q29  Z WdCk \nE         Use -v to get the full diff\n\ntest\\test_add_group.py:13: AssertionError"
+  },
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "FAILED",
+  "suite" : {
+    "uid" : "1ca6774b9ddce595",
+    "name" : "test",
+    "title" : "Test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "thread",
+    "value" : "4480-MainThread"
+  }, {
+    "name" : "suite-name",
+    "value" : "test"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "host",
+    "value" : "dondemon"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}
